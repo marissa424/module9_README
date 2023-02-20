@@ -26,7 +26,7 @@ const questions = [
         message: 'Please wrtie a short description of your project?'
     },
     {
-        type: 'input',
+        type: 'list',
         name: 'license',
         message: 'What kind of license should your project have? (Use arrow keys)',
         choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
@@ -53,15 +53,25 @@ const questions = [
         type: 'input',
         name: 'contribution',
         message: 'What does the user need to know about contributing to the repo?'
-    }
+    },
+]
 
-];
+//write README file
+function writeToFile(data) {
+    fs.wtriteFile('README.md', data, function (err) {
+        err ? console.log(err) : console.log("README.md file created!")
+    });
+}
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {}
+//initialize app
+function init() {
+    inquirer
+    .prompt(questions)
+    .then((answers) => {
+        const fileContent = generateMarkdown(answers);
+        writeToFile(fileContent);
+    })
+}
 
 // Function call to initialize app
 init();
