@@ -36,7 +36,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'installation',
+        name: 'install',
         message: 'What command should be run to install dependencies?'
     },
     {
@@ -58,19 +58,18 @@ const questions = [
 
 //write README file
 function writeToFile(data) {
-    fs.wtriteFile('README.md', data, function (err) {
-        err ? console.log(err) : console.log("README.md file created!")
+    const filename = "./README.md";
+
+    fs.writeFile(filename, data, function (err) {
+        err ? console.log(err) : console.log(filename + " created!")
     });
 }
 
-//initialize app
+// TODO: Create a function to initialize app
 function init() {
-    inquirer
-    .prompt(questions)
-    .then((answers) => {
-        const fileContent = generateMarkdown(answers);
-        writeToFile(fileContent);
-    })
+
+    inquirer.prompt(questions)
+    .then (answers => writeToFile(generateMarkdown(answers)))
 }
 
 // Function call to initialize app
