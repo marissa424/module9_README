@@ -23,6 +23,10 @@ Once everything has been installed you can run node index.js in your terminal. Y
 Below is a screen shot example of what your README file will look like
 ![Demo README.md file generated using make-a-readme](./assets/images/screenshot.png)
 
+## Video
+
+[Walk-though Video Link](https://drive.google.com/file/d/1eSbW-7EXUEfuqqzm_8Ugady1q84zV6iT/view)
+
 ## Credits
 
 Starter code from Coding Boot Camp gitlab.
