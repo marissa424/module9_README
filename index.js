@@ -30,7 +30,6 @@ const questions = [
         name: 'license',
         message: 'What kind of license should your project have? (Use arrow keys)',
         choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
-    
     },
     {
         type: 'input',
@@ -56,7 +55,7 @@ const questions = [
 
 //write README file
 function writeToFile(data) {
-    const filename = "./README.md";
+    const filename = "./sampleREADME.md";
 
     fs.writeFile('README.md', data, function (err) {
         err ? console.log(err) : console.log(filename + " created!")
